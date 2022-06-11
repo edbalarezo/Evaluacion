@@ -17,6 +17,6 @@ class Deporte {
     @Column(updatable = false)
     var id: Long? = null
     var nombre: String? = null
-    var hora: Int? = null
+    var hora: String? = null
     var cancha: String? = null
 }

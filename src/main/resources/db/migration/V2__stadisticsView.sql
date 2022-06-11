@@ -1,2 +1,5 @@
-create view age_view as
-select age,count(age) as frequency from student group by (age)
+create view deporte_view as
+SELECT hora,count(hora) AS frecuencia FROM deporte GROUP BY (hora);
+
+CREATE VIEW cancha_view AS
+SELECT cancha,count(cancha) AS frecuencia FROM deporte GROUP BY (cancha);

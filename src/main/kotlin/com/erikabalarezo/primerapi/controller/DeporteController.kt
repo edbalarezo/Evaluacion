@@ -1,6 +1,7 @@
 package com.erikabalarezo.primerapi.controller
 
 import com.erikabalarezo.primerapi.model.Deporte
+import com.erikabalarezo.primerapi.model.DeporteView
 import com.erikabalarezo.primerapi.service.DeporteService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -30,7 +31,7 @@ class DeporteController {
     }
 
     @GetMapping ("/hora/{hora}")
-    fun listByHora (@PathVariable("hora") hora: Int):List<Deporte>? {
+    fun listByHora (@PathVariable("hora") hora: String):List<Deporte>? {
         return deporteService.getByHora(hora)
     }
 
@@ -39,6 +40,10 @@ class DeporteController {
         return deporteService.getByCancha(cancha)
     }
 
+    @GetMapping ("frecuencia/hora")
+    fun getFrecuenciaHora ():List<DeporteView>?{
+        return deporteService.getFrecuenciaHora()
+    }
 
 
 
